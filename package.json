@@ -1,0 +1,30 @@
+{
+  "name": "js-spreadsheets",
+  "version": "1.0.0",
+  "description": "Pure JavaScript spreedsheet application",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gennadypolakov/pure-js-spreadsheets.git"
+  },
+  "keywords": [
+    "js",
+    "javascript",
+    "spreedsheet"
+  ],
+  "author": "Gennady Polakov <gennadypolakov@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gennadypolakov/pure-js-spreadsheets/issues"
+  },
+  "homepage": "https://github.com/gennadypolakov/pure-js-spreadsheets#readme",
+  "devDependencies": {
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  }
+}
