@@ -5,13 +5,25 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pure JavaScript spreadsheets</title>
     <link rel="shortcut icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <title>Pure JavaScript spreadsheets</title>
 </head>
 <body>
     <div id="app" class="container">
         <div class="spreadsheet">
-            <div class="spreadsheet__header"></div>
+            <div class="spreadsheet__header">
+                <input type="text" value="Новая таблица" class="input"/>
+                <div>
+                    <div class="button">
+                        <i class="material-icons">delete</i>
+                    </div>
+                    <div class="button">
+                        <i class="material-icons">exit_to_app</i>
+                    </div>
+                </div>
+            </div>
             <div class="spreadsheet__toolbar"></div>
             <div class="spreadsheet__formula"></div>
             <div class="spreadsheet__table"></div>
