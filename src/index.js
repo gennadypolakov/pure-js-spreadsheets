@@ -1,3 +1,7 @@
 import './scss/index.scss';
+import {Spreadsheet} from '@/components/spreadsheet/Spreadsheet';
 
-console.log('Working!');
+const spreadsheet = new Spreadsheet(
+    '#app',
+    {components: []}
+);
