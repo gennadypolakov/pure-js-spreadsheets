@@ -1,3 +1,5 @@
+import {$} from '@core/dom';
+
 /**
  *
  */
@@ -5,7 +7,7 @@ export class Spreadsheet {
   /**
    *
    * @param {string} selector
-   * @param {(Header | Toolbar | Formula | Table)[]} options
+   * @param {{components: (Header | Toolbar | Formula | Table)[]}} options
    */
   constructor(selector, options) {
     this.$el = document.querySelector(selector);
@@ -17,11 +19,15 @@ export class Spreadsheet {
    * @return {HTMLDivElement}
    */
   getRoot() {
-    const $root = document.createElement('div');
+    const $root = $.create('div', 'spreadsheet');
+
     this.components.forEach((Component) => {
-      const component = new Component();
-      $root.insertAdjacentHTML('beforeend', component.toHTML());
+      const $el = $.create('div', Component.className);
+      const component = new Component($el);
+      $el.innerHTML = component.toHTML();
+      $root.append($el);
     });
+
     return $root;
   }
 
@@ -29,6 +35,6 @@ export class Spreadsheet {
    *
    */
   render() {
-    this.$el.insertAdjacentHTML('afterbegin', ``);
+    this.$el.append(this.getRoot());
   }
 }
