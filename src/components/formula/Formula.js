@@ -12,6 +12,17 @@ export class Formula extends SpreadsheetComponent {
 
   /**
    *
+   * @param {any} $root
+   */
+  constructor($root) {
+    super($root, {
+      name: 'Formula',
+      listeners: ['input']
+    });
+  }
+
+  /**
+   *
    * @return {string}
    */
   toHTML() {
@@ -19,5 +30,13 @@ export class Formula extends SpreadsheetComponent {
             <div class="info">fx</div>
             <div class="input" contenteditable spellcheck="false"></div>
     `;
+  }
+
+  /**
+   *
+   * @param {any} event
+   */
+  onInput(event) {
+    console.log('Formula: onInput', event);
   }
 }

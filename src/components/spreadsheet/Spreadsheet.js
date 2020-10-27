@@ -21,11 +21,12 @@ export class Spreadsheet {
   getRoot() {
     const $root = $.create('div', 'spreadsheet');
 
-    this.components.forEach((Component) => {
+    this.components = this.components.map((Component) => {
       const $el = $.create('div', Component.className);
       const component = new Component($el);
       $el.html(component.toHTML());
       $root.append($el);
+      return component;
     });
 
     return $root;
@@ -36,5 +37,6 @@ export class Spreadsheet {
    */
   render() {
     this.$el.append(this.getRoot());
+    this.components.forEach((component) => component.init());
   }
 }
