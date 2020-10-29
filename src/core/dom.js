@@ -43,6 +43,15 @@ class Dom {
 
   /**
    *
+   * @param {string} eventType
+   * @param {function} callback
+   */
+  off(eventType, callback) {
+    this.$el.removeEventListener(eventType, callback);
+  }
+
+  /**
+   *
    * @param {HTMLElement} node
    * @return {Dom}
    */

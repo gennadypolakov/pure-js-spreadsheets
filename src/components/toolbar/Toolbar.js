@@ -12,6 +12,17 @@ export class Toolbar extends SpreadsheetComponent {
 
   /**
    *
+   * @param {any} $root
+   */
+  constructor($root) {
+    super($root, {
+      name: 'Toolbar',
+      listeners: ['click']
+    });
+  }
+
+  /**
+   *
    * @return {string}
    */
   toHTML() {
@@ -35,5 +46,13 @@ export class Toolbar extends SpreadsheetComponent {
                 <i class="material-icons">format_underlined</i>
             </div>
     `;
+  }
+
+  /**
+   *
+   * @param {any} event
+   */
+  onClick(event) {
+    console.log(event.target);
   }
 }

@@ -28,4 +28,11 @@ export class SpreadsheetComponent extends DomListener {
   init() {
     this.initDOMListener();
   }
+
+  /**
+   *
+   */
+  destroy() {
+    this.removeDOMListener();
+  }
 }
