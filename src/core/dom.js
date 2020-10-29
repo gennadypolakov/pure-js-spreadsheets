@@ -34,6 +34,15 @@ class Dom {
 
   /**
    *
+   * @param {string} eventType
+   * @param {function} callback
+   */
+  on(eventType, callback) {
+    this.$el.addEventListener(eventType, callback);
+  }
+
+  /**
+   *
    * @param {HTMLElement} node
    * @return {Dom}
    */

@@ -37,6 +37,14 @@ export class Formula extends SpreadsheetComponent {
    * @param {any} event
    */
   onInput(event) {
-    console.log('Formula: onInput', event);
+    console.log('Formula: onInput', event.target.textContent.trim());
+  }
+
+  /**
+   *
+   * @param {any} event
+   */
+  onClick(event) {
+    console.log('Formula: onClick', event.target.textContent.trim());
   }
 }
