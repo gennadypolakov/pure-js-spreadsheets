@@ -6,8 +6,14 @@ import {DomListener} from '@core/DomListener';
 export class SpreadsheetComponent extends DomListener {
   /**
    *
-   * @param {any} $root
-   * @param {any} options
+   * @type {string}
+   */
+  name;
+
+  /**
+   *
+   * @param {Dom} $root
+   * @param {{name: string, listeners: string[]}} options
    */
   constructor($root, options = {}) {
     super($root, options.listeners);

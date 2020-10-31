@@ -52,7 +52,7 @@ class Dom {
 
   /**
    *
-   * @param {HTMLElement} node
+   * @param {HTMLElement | Dom} node
    * @return {Dom}
    */
   append(node) {
@@ -70,13 +70,19 @@ class Dom {
 
 /**
  *
- * @param {string} selector
+ * @param {string | HTMLElement} selector
  * @return {Dom}
  */
 export function $(selector) {
   return new Dom(selector);
 }
 
+/**
+ *
+ * @param {string} tagName
+ * @param {string} classes
+ * @return {Dom}
+ */
 $.create = (tagName, classes = '') => {
   const el = document.createElement(tagName);
   if (classes) {

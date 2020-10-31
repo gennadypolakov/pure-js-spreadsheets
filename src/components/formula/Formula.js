@@ -12,7 +12,7 @@ export class Formula extends SpreadsheetComponent {
 
   /**
    *
-   * @param {any} $root
+   * @param {Dom} $root
    */
   constructor($root) {
     super($root, {

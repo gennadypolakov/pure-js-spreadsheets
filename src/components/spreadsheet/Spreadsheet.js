@@ -16,7 +16,7 @@ export class Spreadsheet {
 
   /**
    *
-   * @return {HTMLDivElement}
+   * @return {Dom}
    */
   getRoot() {
     const $root = $.create('div', 'spreadsheet');
