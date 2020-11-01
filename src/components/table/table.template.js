@@ -24,7 +24,7 @@ function toColumn(content) {
   return `
   <div class="column">
     ${content}
-    <div class="col-resize"></div>
+    <div class="col-resize" data-resize="col"></div>
   </div>
 `;
 }
@@ -39,7 +39,7 @@ function createRow(i, content) {
     <div class="row">
       <div class="row-info">
         ${i ? i : ''}
-        ${i ? '<div class="row-resize"></div>' : ''}
+        ${i ? '<div class="row-resize" data-resize="row"></div>' : ''}
       </div>
       <div class="row-data">${content}</div>
     </div>

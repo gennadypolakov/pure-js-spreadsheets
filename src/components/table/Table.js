@@ -18,12 +18,12 @@ export class Table extends SpreadsheetComponent {
   constructor($root) {
     super($root, {
       name: 'Table',
-      // listeners: [
-      //   'click',
-      //   'mousedown',
-      //   'mouseup',
-      //   'mousemove'
-      // ]
+      listeners: [
+        // 'click',
+        'mousedown',
+        // 'mouseup',
+        // 'mousemove'
+      ]
     });
   }
 
@@ -42,15 +42,18 @@ export class Table extends SpreadsheetComponent {
   // onClick(event) {
   //   console.log(event.type);
   // }
-  //
-  // /**
-  //  *
-  //  * @param {MouseEvent} event
-  //  */
-  // onMousedown(event) {
-  //   console.log(event.type);
-  // }
-  //
+
+  /**
+   *
+   * @param {MouseEvent} event
+   */
+  onMousedown(event) {
+    console.log(event.type);
+    if (event.target.dataset.resize) {
+      console.log(event.target.dataset.resize);
+    }
+  }
+
   // /**
   //  *
   //  * @param {MouseEvent} event
@@ -58,7 +61,7 @@ export class Table extends SpreadsheetComponent {
   // onMouseup(event) {
   //   console.log(event.type);
   // }
-  //
+
   // /**
   //  *
   //  * @param {MouseEvent} event
