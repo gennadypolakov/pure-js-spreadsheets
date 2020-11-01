@@ -91,6 +91,15 @@ class Dom {
   getCoords() {
     return this.$el.getBoundingClientRect();
   }
+
+  /**
+   *
+   * @param {string} selector
+   * @return {NodeListOf<*>}
+   */
+  findAll(selector) {
+    return this.$el.querySelectorAll(selector);
+  }
 }
 
 /**
