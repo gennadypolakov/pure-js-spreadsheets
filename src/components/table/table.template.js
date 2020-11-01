@@ -5,24 +5,25 @@ const CODES = {
 
 /**
  *
- * @param {string} content
- * @param {number} i
+ * @param {string} _
+ * @param {number} col
  * @return {string}
  */
-function toCell(content, i) {
+function toCell(_, col) {
   return `
-  <div class="cell" contenteditable>${content}</div>
+  <div class="cell" contenteditable data-col="${col}"></div>
 `;
 }
 
 /**
  *
  * @param {string} content
+ * @param {number} index
  * @return {string}
  */
-function toColumn(content) {
+function toColumn(content, index) {
   return `
-  <div class="column" data-type="resizable">
+  <div class="column" data-type="resizable" data-col="${index}">
     ${content}
     <div class="col-resize" data-resize="col"></div>
   </div>

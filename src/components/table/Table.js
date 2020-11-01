@@ -55,11 +55,20 @@ export class Table extends SpreadsheetComponent {
       const $resizer = $(event.target);
       const $parent = $resizer.closest('[data-type="resizable"]');
       const coords = $parent.getCoords();
+      let columnCells;
 
       document.onmousemove = (e) => {
         const delta = e.pageX - coords.right;
         const value = coords.width + delta;
         $parent.$el.style.width = value + 'px';
+        if (!columnCells) {
+          columnCells = document
+              .querySelectorAll(`[data-col="${$parent.data.col}"]`);
+        }
+        console.log(columnCells);
+        if (columnCells && columnCells.length) {
+          columnCells.forEach((el) => el.style.width = value + 'px');
+        }
       };
       document.onmouseup = (e) => {
         document.onmousemove = null;

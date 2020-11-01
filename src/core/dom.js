@@ -69,6 +69,14 @@ class Dom {
 
   /**
    *
+   * @return {DOMStringMap}
+   */
+  get data() {
+    return this.$el.dataset;
+  }
+
+  /**
+   *
    * @param {string} selector
    * @return {Dom}
    */
