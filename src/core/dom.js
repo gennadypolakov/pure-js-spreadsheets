@@ -66,11 +66,28 @@ class Dom {
     }
     return this;
   }
+
+  /**
+   *
+   * @param {string} selector
+   * @return {Dom}
+   */
+  closest(selector) {
+    return $(this.$el.closest(selector));
+  }
+
+  /**
+   *
+   * @return {DOMRect}
+   */
+  getCoords() {
+    return this.$el.getBoundingClientRect();
+  }
 }
 
 /**
  *
- * @param {string | HTMLElement} selector
+ * @param {string | HTMLElement | EventTarget} selector
  * @return {Dom}
  */
 export function $(selector) {

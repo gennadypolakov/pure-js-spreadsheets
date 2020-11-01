@@ -1,5 +1,6 @@
 import {SpreadsheetComponent} from '@core/SpreadsheetComponent';
 import {createTable} from '@/components/table/table.template';
+import {$} from '@core/dom';
 
 /**
  *
@@ -51,6 +52,18 @@ export class Table extends SpreadsheetComponent {
     console.log(event.type);
     if (event.target.dataset.resize) {
       console.log(event.target.dataset.resize);
+      const $resizer = $(event.target);
+      const $parent = $resizer.closest('[data-type="resizable"]');
+      const coords = $parent.getCoords();
+
+      document.onmousemove = (e) => {
+        const delta = e.pageX - coords.right;
+        const value = coords.width + delta;
+        $parent.$el.style.width = value + 'px';
+      };
+      document.onmouseup = (e) => {
+        document.onmousemove = null;
+      };
     }
   }
 
