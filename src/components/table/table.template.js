@@ -22,7 +22,10 @@ function toCell(content, i) {
  */
 function toColumn(content) {
   return `
-  <div class="column">${content}</div>
+  <div class="column">
+    ${content}
+    <div class="col-resize"></div>
+  </div>
 `;
 }
 
@@ -34,7 +37,10 @@ function toColumn(content) {
 function createRow(i, content) {
   return `
     <div class="row">
-      <div class="row-info">${i ? i : ''}</div>
+      <div class="row-info">
+        ${i ? i : ''}
+        ${i ? '<div class="row-resize"></div>' : ''}
+      </div>
       <div class="row-data">${content}</div>
     </div>
 `;

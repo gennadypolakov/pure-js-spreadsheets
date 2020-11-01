@@ -13,9 +13,57 @@ export class Table extends SpreadsheetComponent {
 
   /**
    *
+   * @param {Dom} $root
+   */
+  constructor($root) {
+    super($root, {
+      name: 'Table',
+      // listeners: [
+      //   'click',
+      //   'mousedown',
+      //   'mouseup',
+      //   'mousemove'
+      // ]
+    });
+  }
+
+  /**
+   *
    * @return {string}
    */
   toHTML() {
     return createTable(20);
   }
+
+  // /**
+  //  *
+  //  * @param {MouseEvent} event
+  //  */
+  // onClick(event) {
+  //   console.log(event.type);
+  // }
+  //
+  // /**
+  //  *
+  //  * @param {MouseEvent} event
+  //  */
+  // onMousedown(event) {
+  //   console.log(event.type);
+  // }
+  //
+  // /**
+  //  *
+  //  * @param {MouseEvent} event
+  //  */
+  // onMouseup(event) {
+  //   console.log(event.type);
+  // }
+  //
+  // /**
+  //  *
+  //  * @param {MouseEvent} event
+  //  */
+  // onMousemove(event) {
+  //   console.log(event.type);
+  // }
 }
