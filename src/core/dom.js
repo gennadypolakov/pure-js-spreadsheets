@@ -66,11 +66,60 @@ class Dom {
     }
     return this;
   }
+
+  /**
+   *
+   * @return {DOMStringMap}
+   */
+  get data() {
+    return this.$el.dataset;
+  }
+
+  /**
+   *
+   * @param {string} selector
+   * @return {Dom}
+   */
+  closest(selector) {
+    return $(this.$el.closest(selector));
+  }
+
+  /**
+   *
+   * @return {DOMRect}
+   */
+  getCoords() {
+    return this.$el.getBoundingClientRect();
+  }
+
+  /**
+   *
+   * @param {string} selector
+   * @return {NodeListOf<*>}
+   */
+  findAll(selector) {
+    return this.$el.querySelectorAll(selector);
+  }
+
+  /**
+   *
+   * @param {Object.<string, string | number>} styles
+   */
+  css(styles = {}) {
+    Object.keys(styles).forEach((prop) => this.$el.style[prop] = styles[prop]);
+  }
+
+  /**
+   * clear element in-line styles
+   */
+  clearCss() {
+    this.$el.removeAttribute('style');
+  }
 }
 
 /**
  *
- * @param {string | HTMLElement} selector
+ * @param {string | HTMLElement | EventTarget} selector
  * @return {Dom}
  */
 export function $(selector) {
