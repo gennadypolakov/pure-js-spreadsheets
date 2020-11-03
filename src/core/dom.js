@@ -108,6 +108,13 @@ class Dom {
   css(styles = {}) {
     Object.keys(styles).forEach((prop) => this.$el.style[prop] = styles[prop]);
   }
+
+  /**
+   * clear element in-line styles
+   */
+  clearCss() {
+    this.$el.removeAttribute('style');
+  }
 }
 
 /**
