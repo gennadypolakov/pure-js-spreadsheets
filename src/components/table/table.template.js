@@ -37,8 +37,8 @@ function toColumn(content, index) {
  */
 function createRow(i, content) {
   return `
-    <div class="row">
-      <div class="row-info" data-type="resizable">
+    <div class="row" data-type="resizable">
+      <div class="row-info">
         ${i ? i : ''}
         ${i ? '<div class="row-resize" data-resize="row"></div>' : ''}
       </div>

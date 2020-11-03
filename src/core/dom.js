@@ -100,6 +100,14 @@ class Dom {
   findAll(selector) {
     return this.$el.querySelectorAll(selector);
   }
+
+  /**
+   *
+   * @param {Object.<string, string | number>} styles
+   */
+  css(styles = {}) {
+    Object.keys(styles).forEach((prop) => this.$el.style[prop] = styles[prop]);
+  }
 }
 
 /**
