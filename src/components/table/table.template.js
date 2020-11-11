@@ -4,16 +4,25 @@ const CODES = {
 };
 
 /**
- *
+ * @typedef ToCell
+ * @type {function}
  * @param {string} _
  * @param {number} col
  * @return {string}
  */
-function toCell(_, col) {
-  return `
-  <div class="cell" contenteditable data-col="${col}"></div>
+
+/**
+ *
+ * @param {number} row
+ * @return {ToCell}
+ */
+const toCell = (row) => (_, col) => `
+<div
+  class="cell"
+  contenteditable
+  data-id="${row}:${col}"
+  data-col="${col}"></div>
 `;
-}
 
 /**
  *
@@ -70,12 +79,12 @@ export function createTable(rowCount = 10) {
       .map(toColumn)
       .join('');
   rows.push(createRow(null, cols));
-  for (let i = 0; i < rowCount; i++) {
+  for (let row = 0; row < rowCount; row++) {
     const cells = new Array(colCount)
         .fill('')
-        .map(toCell)
+        .map(toCell(row))
         .join('');
-    rows.push(createRow(i + 1, cells));
+    rows.push(createRow(row + 1, cells));
   }
   return rows.join('');
 }

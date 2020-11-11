@@ -2,6 +2,7 @@ import {SpreadsheetComponent} from '@core/SpreadsheetComponent';
 import {createTable} from '@/components/table/table.template';
 import {resizeHandler} from '@/components/table/table.resize';
 import {shouldResize} from '@/components/table/table.functions';
+import {TableSelection} from '@/components/table/TableSelection';
 
 /**
  *
@@ -24,6 +25,24 @@ export class Table extends SpreadsheetComponent {
         'mousedown'
       ]
     });
+  }
+
+  /**
+   *
+   */
+  prepare() {
+    this.selection = new TableSelection();
+  }
+
+  /**
+   *
+   */
+  init() {
+    super.init();
+
+    this.selection = new TableSelection();
+    const $cell = this.$root.find('[data-id="0:0"]');
+    this.selection.select($cell);
   }
 
   /**

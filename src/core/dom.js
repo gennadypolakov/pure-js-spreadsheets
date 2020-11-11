@@ -95,6 +95,15 @@ class Dom {
   /**
    *
    * @param {string} selector
+   * @return {Dom}
+   */
+  find(selector) {
+    return $(this.$el.querySelector(selector));
+  }
+
+  /**
+   *
+   * @param {string} selector
    * @return {NodeListOf<*>}
    */
   findAll(selector) {
@@ -107,6 +116,22 @@ class Dom {
    */
   css(styles = {}) {
     Object.keys(styles).forEach((prop) => this.$el.style[prop] = styles[prop]);
+  }
+
+  /**
+   *
+   * @param {string} className
+   */
+  addClass(className) {
+    this.$el.classList.add(className);
+  }
+
+  /**
+   *
+   * @param {string} className
+   */
+  removeClass(className) {
+    this.$el.classList.remove(className);
   }
 
   /**
