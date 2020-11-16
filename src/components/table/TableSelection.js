@@ -2,6 +2,8 @@
  *
  */
 export class TableSelection {
+  static className = 'selected';
+
   /**
    *
    */
@@ -13,8 +15,17 @@ export class TableSelection {
    * @param {Dom} $el
    */
   select($el) {
+    this.clear();
     this.group.push($el);
-    $el.addClass('selected');
+    $el.addClass(TableSelection.className);
+  }
+
+  /**
+   *
+   */
+  clear() {
+    this.group.forEach(($c) => $c.removeClass(TableSelection.className));
+    this.group = [];
   }
 
   /**

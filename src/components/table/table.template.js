@@ -21,7 +21,9 @@ const toCell = (row) => (_, col) => `
   class="cell"
   contenteditable
   data-id="${row}:${col}"
-  data-col="${col}"></div>
+  data-col="${col}"
+  data-type="cell"
+></div>
 `;
 
 /**
